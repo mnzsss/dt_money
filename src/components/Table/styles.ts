@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
-import { ThemeType } from "../../@types/styled";
+import { transactionTypes } from "../../constants/transaction";
+import { TransactionProps } from "../../interfaces/Transaction";
 
 export const TableContainer = styled.table`
   width: 100%;
@@ -23,21 +24,12 @@ export const TableContainer = styled.table`
   }
 `;
 
-interface PriceHighlightProps {
-  variant?: "income" | "outcome";
-}
-
-const variantColor: Record<string, keyof ThemeType> = {
-  income: "green-300",
-  outcome: "red-300",
-};
-
-export const PriceHighlight = styled.td<PriceHighlightProps>`
+export const PriceHighlight = styled.td<TransactionProps>`
   color: ${(props) => props.theme.white};
 
   ${(props) =>
-    props.variant &&
+    props.operation &&
     css`
-      color: ${props.theme[variantColor[props.variant]]};
+      color: ${props.theme[transactionTypes[props.operation]]};
     `};
 `;

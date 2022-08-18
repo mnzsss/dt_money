@@ -10,13 +10,13 @@ export function Table() {
         <thead>
           <tr>
             <td width="50%">Alimentação</td>
-            <PriceHighlight variant="income">R$ 223,40</PriceHighlight>
+            <PriceHighlight operation="income">R$ 223,40</PriceHighlight>
             <td>Venda</td>
             <td>13/04/2022</td>
           </tr>
           <tr>
             <td width="50%">Hamburger</td>
-            <PriceHighlight variant="outcome">- R$ 223,40</PriceHighlight>
+            <PriceHighlight operation="outcome">- R$ 223,40</PriceHighlight>
             <td>Venda</td>
             <td>13/04/2022</td>
           </tr>
