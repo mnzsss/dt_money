@@ -1,6 +1,7 @@
-import { HeaderContainer, HeaderContent, NewTransactionButton } from "./styles";
+import { HeaderContainer, HeaderContent } from "./styles";
 
 import logo from "../../assets/dt-money.svg";
+import { Dialog } from "../Dialog";
 
 export function Header() {
   return (
@@ -8,7 +9,7 @@ export function Header() {
       <HeaderContent>
         <img src={logo} alt="DT Money" />
 
-        <NewTransactionButton>Nova Transação</NewTransactionButton>
+        <Dialog triggerText="Nova Transação" title="Nova Transação" />
       </HeaderContent>
     </HeaderContainer>
   );
