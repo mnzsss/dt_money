@@ -1,5 +1,13 @@
 import * as RadixDialog from "@radix-ui/react-dialog";
-import { DialogTrigger } from "./styles";
+import { X } from "phosphor-react";
+import { PropsWithChildren } from "react";
+import { Button } from "../_common/Button";
+import {
+  DialogClose,
+  DialogContent,
+  DialogOverlay,
+  DialogTitle,
+} from "./styles";
 
 interface DialogProps {
   triggerText: string;
@@ -7,27 +15,36 @@ interface DialogProps {
   description?: string;
 }
 
-export function Dialog({ triggerText, title, description }: DialogProps) {
+export function Dialog({
+  triggerText,
+  title,
+  description,
+  children,
+}: PropsWithChildren<DialogProps>) {
   return (
     <RadixDialog.Root>
       {/* Trigger button */}
-      <DialogTrigger>{triggerText}</DialogTrigger>
+      <Button as={RadixDialog.DialogTrigger}>{triggerText}</Button>
 
       <RadixDialog.Portal>
         {/* Overlay */}
-        <RadixDialog.Overlay />
+        <DialogOverlay />
 
         {/* Dialog Content */}
-        <RadixDialog.Content>
-          {/* Content Title */}
-          <RadixDialog.Title>{title}</RadixDialog.Title>
-
+        <DialogContent>
           {/* Close button */}
-          <RadixDialog.Close />
+          <DialogClose>
+            <X size={24} />
+          </DialogClose>
+
+          {/* Content Title */}
+          <DialogTitle>{title}</DialogTitle>
 
           {/* Content Description */}
           <RadixDialog.Description>{description}</RadixDialog.Description>
-        </RadixDialog.Content>
+
+          {children}
+        </DialogContent>
       </RadixDialog.Portal>
     </RadixDialog.Root>
   );
