@@ -1,8 +1,8 @@
 import { ArrowCircleDown, ArrowCircleUp } from "phosphor-react";
-import { RadioGroup } from "../../RadioGroup";
-import { Radio } from "../../RadioGroup/Radio";
+import { RadioGroup } from "../../_common/RadioGroup";
 import { Button } from "../../_common/Button";
 import { Input } from "../../_common/Input";
+import { Radio } from "../../_common/Radio";
 import { Container } from "./styles";
 
 export function NewTransactionModal() {

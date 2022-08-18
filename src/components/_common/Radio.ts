@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import * as RadixRadioGroup from "@radix-ui/react-radio-group";
 
-import { transactionTypes } from "../../../constants/transaction";
-import { TransactionProps } from "../../../interfaces/Transaction";
+import { transactionTypes } from "../../constants/transaction";
+import { TransactionProps } from "../../interfaces/Transaction";
 
-export const RadioContainer = styled(RadixRadioGroup.Item)<TransactionProps>`
+export const Radio = styled(RadixRadioGroup.Item)<TransactionProps>`
   background-color: ${(props) => props.theme["gray-700"]};
   padding: 1rem;
   display: flex;
